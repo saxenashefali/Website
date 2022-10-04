@@ -38,4 +38,4 @@ After Submit...
 
 </div>
 
-Red Section is Done by [docType](https://github.com/Uncoded-AI/docType) module
+Red Section is Done by [docType](https://github.com/saxenashefali/doctype) module
