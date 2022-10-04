@@ -1,0 +1,41 @@
+{% load rest_framework %}
+{% load static %}
+<html>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+        }
+        label[for=id_text] {
+            font-size: 0;
+        }
+    
+        body {
+            text-align: center;
+        }
+    
+        form {
+            display: inline-block;
+        }
+    </style>
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+    <body>
+        {% if button == 'true' %}
+        <div style="height: 80px; background-color: rgb(37, 31, 31); margin-bottom: 50px; color: aliceblue;">
+            <h1 style="color:rgb(207, 207, 207); padding-top: 15px;">Enter Your Article</h1>
+        </div>
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            {% if button == 'true' %}
+                <input name="api" style="background-color: rgb(9, 170, 9); margin: 20px; padding: 10px; font-size: medium; color: azure; cursor: pointer;" type="submit" value="Detect Class">
+            {% else %}
+                <H1> Your article is : {{ class }} class </H1>
+            {% endif %}
+        </form>
+    </body>
+</html>
